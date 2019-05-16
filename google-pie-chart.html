@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Month', 'No Parking', 'Drunk & Drive', 'Traffic Violation', 'Impound',],
+            ['2018',  165,      938,         522,             998,           ],
+            ['2017',  135,      1120,        599,             1268,          ],
+            ['2016',  157,      1167,        587,             807,           ],
+            ['2015',  139,      1110,        615,             968,           ],
+            ['2014',  136,      691,         629,             1026,          ]
+            ]);
+
+        var options = {
+          title : 'Violation Report',
+          pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+  }
+</script>
+</head>
+<body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
